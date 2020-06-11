@@ -1,2 +1,3 @@
-export PURE_CMD_MAX_EXEC_TIME=60
 export PATH="$PATH:$HOME/.local/bin/"
+
+export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc

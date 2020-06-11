@@ -1,3 +1,7 @@
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 function load_PZT_mod() {
 	zinit ice svn silent; zinit snippet PZT::modules/$1
 }
@@ -11,9 +15,11 @@ ZINIT[HOME_DIR]="$ZSHDIR/zplugins"
 # Load zinit
 source "$ZSHDIR/external/zinit/zinit.zsh"
 
+zinit ice depth=1; zinit light romkatv/powerlevel10k
+
 # Pure prompt
-zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
-zinit light sindresorhus/pure
+#zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
+#zinit light sindresorhus/pure
 
 # zinit light denysdovhan/spaceship-prompt
 # zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
@@ -74,3 +80,7 @@ for config ($HOME/.dotfiles/zsh/configs/*.zsh) source $config
 
 # load fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PATH="/usr/local/opt/llvm/bin:$PATH"
+
+# Load p10k
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

@@ -19,7 +19,7 @@ export PAGER='less'
 # Less config
 #
 
-export LESS='-F -g -i -M -R -S -w -z-4'
+export LESS='-g -i -M -R -S -w -z-4'
 
 
 #
@@ -34,5 +34,5 @@ export PATH="$PATH:/usr/local/Google/flutter/bin"
 #
 # Secrets
 #
-#
+
 source ~/.secret_envs
