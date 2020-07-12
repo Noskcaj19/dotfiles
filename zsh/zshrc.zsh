@@ -7,7 +7,7 @@ function load_PZT_mod() {
 }
 
 function load_PZT_mod_async() {
-	zinit ice svn silent; zinit ice wait"0"; zinit snippet PZT::modules/$1
+	zinit ice svn silent wait"0"; zinit snippet PZT::modules/$1
 }
 
 declare -A ZINIT 
@@ -50,10 +50,9 @@ load_PZT_mod fasd
 load_PZT_mod git
 load_PZT_mod osx
 load_PZT_mod python
-# Prints an error, but loads fine?
-load_PZT_mod archive &>/dev/null
-# silent is apparently not so silent
-load_PZT_mod_async homebrew &>/dev/null
+load_PZT_mod archive
+load_PZT_mod_async homebrew
+
 
 
 zinit light zsh-users/zsh-history-substring-search 
