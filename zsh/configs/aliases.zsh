@@ -40,3 +40,6 @@ alias parrot="curl parrot.live"
 
 alias sleepoff='sudo pmset -b sleep 0; sudo pmset -b disablesleep 1'
 alias sleepon='sudo pmset -b sleep 5; sudo pmset -b disablesleep 0'
+
+unalias http-serve
+alias http-serve='caddy file-server -browse -listen localhost:8080'
