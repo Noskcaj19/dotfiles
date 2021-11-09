@@ -51,12 +51,11 @@ load_PZT_mod git
 load_PZT_mod osx
 load_PZT_mod python
 load_PZT_mod archive
-load_PZT_mod_async homebrew
+load_PZT_mod homebrew
 
 
 
 zinit light zsh-users/zsh-history-substring-search 
-
 
 # Load syntax highlighting with async power
 zinit ice wait"0" atinit"ZINIT[COMPINIT_OPTS]=-C; zpcompinit; zpcdreplay" lucid
@@ -66,6 +65,8 @@ zinit light zdharma/fast-syntax-highlighting
 zinit light unixorn/git-extra-commands
 zinit light djui/alias-tips
 zinit light $ZSHDIR/contrib/dotenv
+
+zinit light wfxr/forgit
 
 # load iterm tools
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
@@ -83,3 +84,5 @@ export PATH="/usr/local/opt/llvm/bin:$PATH"
 
 # Load p10k
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+if [ -e /Users/jack/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/jack/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+[ -f "/Users/jack/.ghcup/env" ] && source "/Users/jack/.ghcup/env" # ghcup-env

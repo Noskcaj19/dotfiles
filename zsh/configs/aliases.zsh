@@ -20,6 +20,8 @@ alias lk="exa -s size"
 alias car="cargo run"
 alias cab="cargo build"
 alias cac="cargo check"
+alias cax="cargo xtask"
+alias cxc="cargo xtask check"
 
 # Clip alias
 alias -g clip='$(pbpaste)'
@@ -29,11 +31,6 @@ alias cdt="osascript -l JavaScript ~/.files/automation/cd-tab.applescript"
 
 function mdfindg() {
     mdfind "kMDItemDisplayName=='$1'$2"
-}
-
-function z() {
-    cd "$(fasd -Rdl "$@" | fzf -1 -0 --no-sort +m)" || return 1
-
 }
 
 alias parrot="curl parrot.live"
