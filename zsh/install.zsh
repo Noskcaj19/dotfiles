@@ -1,0 +1,1 @@
+ln -is $PWD/home_dir_configs/*(D) $HOME

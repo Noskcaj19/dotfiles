@@ -23,20 +23,26 @@ alias cac="cargo check"
 alias cax="cargo xtask"
 alias cxc="cargo xtask check"
 
-# Clip alias
-alias -g clip='$(pbpaste)'
 
-# Iterm cd tab
-alias cdt="osascript -l JavaScript ~/.files/automation/cd-tab.applescript"
+if [[ $(uname) == 'Darwin' ]] {
+    # Clip alias
+    alias -g clip='$(pbpaste)'
 
-function mdfindg() {
-    mdfind "kMDItemDisplayName=='$1'$2"
+    # Iterm cd tab
+    alias cdt="osascript -l JavaScript ~/.files/automation/cd-tab.applescript"
+
+    function mdfindg() {
+        mdfind "kMDItemDisplayName=='$1'$2"
+    }
+
+    alias sleepoff='sudo pmset -b sleep 0; sudo pmset -b disablesleep 1'
+    alias sleepon='sudo pmset -b sleep 5; sudo pmset -b disablesleep 0'
 }
 
 alias parrot="curl parrot.live"
 
-alias sleepoff='sudo pmset -b sleep 0; sudo pmset -b disablesleep 1'
-alias sleepon='sudo pmset -b sleep 5; sudo pmset -b disablesleep 0'
+if (( $+commands[caddy] )) {
+    unalias http-serve
+    alias http-serve='caddy file-server -browse -listen localhost:8080'    
+}
 
-unalias http-serve
-alias http-serve='caddy file-server -browse -listen localhost:8080'
