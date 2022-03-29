@@ -1,6 +1,8 @@
 # Vim
 alias vim="nvim"
 
+alias cd="z"
+
 # ls shortcuts
 alias ls="exa"
 alias lt1="exa -TL1"

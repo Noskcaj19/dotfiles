@@ -6,7 +6,7 @@ export EDITOR='nvim'
 export VISUAL='nvim'
 export PAGER='less'
 
-. ~/.cargo/env
+[ -f ~/.cargo/env ] && . ~/.cargo/env
 
 export LESS='--hilite-search --ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS --chop-long-lines --hilite-unread --window=4'
 
