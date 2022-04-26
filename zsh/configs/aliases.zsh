@@ -1,7 +1,8 @@
 # Vim
 alias vim="nvim"
 
-alias cd="z"
+# Breaks `cd -<tab>`
+# alias cd="z"
 
 # ls shortcuts
 alias ls="exa"
