@@ -34,10 +34,14 @@ load_PZT_mod utility
 load_PZT_mod completion
 load_PZT_mod fasd
 load_PZT_mod git
-load_PZT_mod osx
+if [[ $(uname) == 'Darwin' ]] {
+  load_PZT_mod osx
+}
 load_PZT_mod python
 load_PZT_mod archive
-zinit ice svn wait lucid; zinit snippet PZT::modules/homebrew
+if [[ $(uname) == 'Darwin' ]] {
+  zinit ice svn wait lucid; zinit snippet PZT::modules/homebrew
+}
 zinit ice svn wait lucid; zinit snippet OMZ::plugins/dotenv
 # load_PZT_mod homebrew
 
@@ -68,7 +72,8 @@ zinit wait lucid for \
 zinit wait lucid for \
 	unixorn/git-extra-commands \
 	djui/alias-tips \
-	$ZSHDIR/contrib/dotenv
+	$ZSHDIR/contrib/dotenv \
+	chisui/zsh-nix-shell
 	# wfxr/forgit
 
 # Fixes weird issue with fzf-tab
@@ -83,6 +88,6 @@ for config ($HOME/.dotfiles/zsh/configs/*.zsh) source $config
 
 # Load p10k
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-[ -f "/Volumes/KcajSSD/.ghcup/env" ] && source "/Volumes/KcajSSD/.ghcup/env" # ghcup-env
 
 # zprof
+
