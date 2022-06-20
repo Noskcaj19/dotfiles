@@ -19,7 +19,7 @@ zstyle ':prezto:*:*' case-sensitive 'no'
 zstyle ':prezto:*:*' color 'yes'
 zstyle ':prezto:module:editor' key-bindings 'emacs'
 zstyle ':prezto:module:editor' dot-expansion 'yes'
-zstyle ':prezto:module:gnu-utility' prefix 'g'
+zstyle ':prezto:module:gnu-utility' prefix ''
 zstyle ':prezto:module:syntax-highlighting' pattern \
     'rm -rf*' 'fg=white,bold,bg=red'
 
@@ -29,6 +29,7 @@ load_PZT_mod editor
 load_PZT_mod history
 load_PZT_mod directory
 load_PZT_mod spectrum
+load_PZT_mod gnu-utility
 load_PZT_mod utility
 load_PZT_mod completion
 load_PZT_mod fasd
@@ -67,8 +68,7 @@ zinit wait lucid for \
 zinit wait lucid for \
 	unixorn/git-extra-commands \
 	djui/alias-tips \
-	$ZSHDIR/contrib/dotenv \
-    endaaman/lxd-completion-zsh
+	$ZSHDIR/contrib/dotenv
 	# wfxr/forgit
 
 # Fixes weird issue with fzf-tab
@@ -77,9 +77,6 @@ zstyle ':completion:*:descriptions' format '[%d]'
 
 # load iterm tools
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-# load gcp tools
-for inc (/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/{completion,path}.zsh.inc) test
 
 # load personal configs
 for config ($HOME/.dotfiles/zsh/configs/*.zsh) source $config
