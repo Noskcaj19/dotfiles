@@ -1,0 +1,50 @@
+[include]
+  path = ~/.gitconfig-local
+
+[core]
+	excludesfile = ~/.gitignore_global
+	pager = delta
+	autocrlf = input
+
+[user]
+	name = Noskcaj
+	email = kcajdev@gmail.com
+
+[interactive]
+	diffFilter = delta --color-only
+
+[diff]
+	submodule = log
+	colorMoved = plain
+
+[merge]
+	ff = only
+	conflictstyle = zdiff3
+
+[push]
+	followTags = true
+
+[delta]
+	syntax-theme = "zenburn"
+	side-by-side = true
+	features = unobtrusive-line-numbers decorations
+	colorMoved = default
+	commit-decoration-style = bold yellow box ul
+	hunk-header-decoration-style = yellow box
+	file-decoration-style = none
+	file-style = bold yellow ul
+
+[color]
+	ui = true
+
+[absorb]
+	maxStack = 50
+
+[rerere]
+	enabled = false
+
+[safe]
+	directory = /
+
+[submodule]
+	recurse = true
