@@ -1,6 +1,6 @@
 function z-jump-widget() {
     zle vi-beginning-of-line
-    BUFFER="z ${BUFFER}"
+    BUFFER="zi ${BUFFER}"
     zle accept-line
 }
 zle -N z-jump-widget
