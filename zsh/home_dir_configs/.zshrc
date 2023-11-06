@@ -3,7 +3,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # zmodload zsh/zprof
-ZINIT_HOME="$ZSHDIR/extern/zinit"
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+[ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
+[ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 source "${ZINIT_HOME}/zinit.zsh"
 
 function load_PZT_mod() {
@@ -91,3 +93,4 @@ for config ($HOME/.dotfiles/zsh/configs/*.zsh) source $config
 
 # zprof
 
+### End of Zinit's installer chunk
