@@ -15,7 +15,10 @@
 
 [diff]
 	submodule = log
-	colorMoved = plain
+	colorMoved = default
+	algorithm = histogram
+	tool = difftastic
+	colorMovedWS = allow-indentation-change
 
 [merge]
 	ff = only
@@ -23,6 +26,15 @@
 
 [push]
 	followTags = true
+
+[pager]
+        difftool = true
+
+[difftool]
+        prompt = false
+
+[difftool "difftastic"]
+        cmd = difft "$LOCAL" "$REMOTE"
 
 [delta]
 	syntax-theme = "zenburn"
@@ -48,3 +60,16 @@
 
 [submodule]
 	recurse = true
+[status]
+	submoduleSummary = true
+[branch]
+	sort = -committerdate
+[tag]
+	sort = taggerdate
+[fetch]
+	prune = true
+	prunetags = true
+[rebase]
+	updateRefs = true
+[init]
+	defaultBranch = main
